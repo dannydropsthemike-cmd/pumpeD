@@ -1,0 +1,75 @@
+{
+  "name": "Gym Hypertrophy · 5 Day Split",
+  "schedule": {
+    "0": "posterior-legs",
+    "1": "push",
+    "2": "rest",
+    "3": "pull",
+    "4": "rest",
+    "5": "quad-legs",
+    "6": "upper-accessories"
+  },
+  "workouts": [
+    {
+      "id": "push",
+      "name": "Chest, shoulders & triceps",
+      "focus": "Push day · controlled reps, finish most sets with 1–3 reps in reserve",
+      "exercises": [
+        { "id": "chest-press", "name": "Chest press machine", "sets": 4, "reps": "8–12", "rest": "2 min" },
+        { "id": "pec-fly", "name": "Pec fly machine", "sets": 3, "reps": "10–15", "rest": "75 sec" },
+        { "id": "shoulder-press", "name": "Shoulder press machine", "sets": 3, "reps": "8–12", "rest": "90 sec" },
+        { "id": "seated-dip", "name": "Seated dip machine", "sets": 3, "reps": "8–12", "rest": "90 sec" },
+        { "id": "dumbbell-lateral-raise", "name": "Dumbbell lateral raise", "sets": 3, "reps": "12–20", "rest": "60 sec" }
+      ]
+    },
+    {
+      "id": "pull",
+      "name": "Back & biceps",
+      "focus": "Pull day · full stretch on each rep, controlled return",
+      "exercises": [
+        { "id": "ergonomic-lat-pulldown", "name": "Ergonomic lat pulldown machine", "sets": 4, "reps": "8–12", "rest": "2 min" },
+        { "id": "row-machine", "name": "Row machine", "sets": 4, "reps": "8–12", "rest": "2 min" },
+        { "id": "cable-face-pull", "name": "Face pull · pulley machine", "sets": 3, "reps": "12–20", "rest": "60 sec" },
+        { "id": "preacher-curl", "name": "Preacher curl rack", "sets": 3, "reps": "8–12", "rest": "75 sec" },
+        { "id": "cable-bicep-curl", "name": "Bicep curl cable machine", "sets": 3, "reps": "10–15", "rest": "60 sec" }
+      ]
+    },
+    {
+      "id": "quad-legs",
+      "name": "Legs · quad focus",
+      "focus": "Quads & adductors · use a comfortable, repeatable range of motion",
+      "exercises": [
+        { "id": "squat-rack-squat", "name": "Squat · squat rack", "sets": 4, "reps": "6–10", "rest": "2–3 min" },
+        { "id": "leg-press", "name": "Leg press", "sets": 4, "reps": "10–15", "rest": "2 min" },
+        { "id": "leg-extension", "name": "Leg extension", "sets": 3, "reps": "10–15", "rest": "75 sec" },
+        { "id": "inner-thigh", "name": "Inner thigh leg machine", "sets": 3, "reps": "12–20", "rest": "60 sec" },
+        { "id": "standing-calf-raise", "name": "Standing calf raise · dumbbells", "sets": 3, "reps": "10–15", "rest": "60 sec" }
+      ]
+    },
+    {
+      "id": "upper-accessories",
+      "name": "Upper body · volume",
+      "focus": "Chest, back, delts & arms · moderate loads and clean reps",
+      "exercises": [
+        { "id": "incline-dumbbell-press", "name": "Incline dumbbell press · adjustable bench", "sets": 3, "reps": "8–12", "rest": "90 sec" },
+        { "id": "lat-pulldown", "name": "Lat pulldown", "sets": 3, "reps": "10–15", "rest": "90 sec" },
+        { "id": "smith-incline-press", "name": "Incline press · Smith machine", "sets": 3, "reps": "8–12", "rest": "90 sec" },
+        { "id": "dumbbell-rear-delt-fly", "name": "Rear delt fly · dumbbells", "sets": 3, "reps": "12–20", "rest": "60 sec" },
+        { "id": "ez-bar-curl", "name": "EZ bar curl", "sets": 3, "reps": "8–12", "rest": "75 sec" },
+        { "id": "cable-triceps-extension", "name": "Overhead triceps extension · pulley machine", "sets": 3, "reps": "10–15", "rest": "60 sec" }
+      ]
+    },
+    {
+      "id": "posterior-legs",
+      "name": "Legs · glutes & hamstrings",
+      "focus": "Posterior chain · control the lowering portion of each rep",
+      "exercises": [
+        { "id": "smith-romanian-deadlift", "name": "Romanian deadlift · Smith machine", "sets": 4, "reps": "8–12", "rest": "2 min" },
+        { "id": "leg-curl", "name": "Leg curl machine", "sets": 4, "reps": "10–15", "rest": "90 sec" },
+        { "id": "smith-hip-thrust", "name": "Hip thrust · Smith machine", "sets": 3, "reps": "8–12", "rest": "2 min" },
+        { "id": "outer-thigh", "name": "Outer thigh leg machine", "sets": 3, "reps": "12–20", "rest": "60 sec" },
+        { "id": "lower-back-extension", "name": "Lower back machine", "sets": 2, "reps": "12–15", "rest": "60 sec" }
+      ]
+    }
+  ]
+}

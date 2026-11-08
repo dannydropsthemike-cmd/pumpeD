@@ -1,0 +1,44 @@
+{
+  "name": "My training plan",
+  "schedule": {
+    "1": "push",
+    "2": "pull",
+    "3": "legs",
+    "4": "rest",
+    "5": "upper",
+    "6": "lower",
+    "0": "rest"
+  },
+  "workouts": [
+    { "id": "push", "name": "Push day", "focus": "Chest · shoulders · triceps", "exercises": [
+      { "id": "bench-press", "name": "Bench press", "sets": 3, "reps": "8–10", "rest": "90 sec" },
+      { "id": "shoulder-press", "name": "Dumbbell shoulder press", "sets": 3, "reps": "10–12", "rest": "75 sec" },
+      { "id": "lateral-raise", "name": "Lateral raises", "sets": 3, "reps": "12–15", "rest": "60 sec" },
+      { "id": "triceps-pushdown", "name": "Cable triceps pushdown", "sets": 3, "reps": "10–12", "rest": "60 sec" }
+    ] },
+    { "id": "pull", "name": "Pull day", "focus": "Back · biceps", "exercises": [
+      { "id": "lat-pulldown", "name": "Lat pulldown", "sets": 3, "reps": "8–12", "rest": "90 sec" },
+      { "id": "seated-row", "name": "Seated cable row", "sets": 3, "reps": "10–12", "rest": "75 sec" },
+      { "id": "face-pull", "name": "Face pulls", "sets": 3, "reps": "12–15", "rest": "60 sec" },
+      { "id": "bicep-curl", "name": "Bicep curls", "sets": 3, "reps": "10–12", "rest": "60 sec" }
+    ] },
+    { "id": "legs", "name": "Leg day", "focus": "Quads · hamstrings · glutes", "exercises": [
+      { "id": "squat", "name": "Squat", "sets": 4, "reps": "6–8", "rest": "120 sec" },
+      { "id": "romanian-deadlift", "name": "Romanian deadlift", "sets": 3, "reps": "8–10", "rest": "90 sec" },
+      { "id": "leg-press", "name": "Leg press", "sets": 3, "reps": "10–12", "rest": "90 sec" },
+      { "id": "leg-curl", "name": "Seated leg curl", "sets": 3, "reps": "10–12", "rest": "60 sec" }
+    ] },
+    { "id": "upper", "name": "Upper body", "focus": "A balanced upper-body day", "exercises": [
+      { "id": "incline-press", "name": "Incline dumbbell press", "sets": 3, "reps": "8–12", "rest": "90 sec" },
+      { "id": "chest-supported-row", "name": "Chest-supported row", "sets": 3, "reps": "8–12", "rest": "90 sec" },
+      { "id": "lateral-raise-upper", "name": "Lateral raises", "sets": 3, "reps": "12–15", "rest": "60 sec" },
+      { "id": "hammer-curl", "name": "Hammer curls", "sets": 2, "reps": "10–12", "rest": "60 sec" }
+    ] },
+    { "id": "lower", "name": "Lower body", "focus": "Build strength from the ground up", "exercises": [
+      { "id": "deadlift", "name": "Deadlift", "sets": 3, "reps": "5–6", "rest": "150 sec" },
+      { "id": "split-squat", "name": "Bulgarian split squat", "sets": 3, "reps": "8 each", "rest": "90 sec" },
+      { "id": "hip-thrust", "name": "Hip thrust", "sets": 3, "reps": "8–12", "rest": "90 sec" },
+      { "id": "calf-raise", "name": "Standing calf raise", "sets": 3, "reps": "12–15", "rest": "60 sec" }
+    ] }
+  ]
+}
