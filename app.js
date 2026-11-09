@@ -98,7 +98,6 @@
     const noPlan = state.routine.workouts.length === 0;
     $('#todayWorkoutName').textContent = workout?.name || (noPlan ? 'No workout loaded' : 'Rest day');
     $('#todayWorkoutMeta').textContent = workout ? `${workout.focus || `${workout.exercises.length} exercises`} · ${workout.exercises.length} exercises` : noPlan ? 'Import your plan to see what you’re training today.' : 'A little recovery goes a long way.';
-    $('#todayLetter').textContent = workout ? workout.name.split(/\s+/).map(w => w[0]).join('').slice(0, 2) : '✳';
     $('#startTodayButton').innerHTML = noPlan ? 'Import a workout plan <span aria-hidden="true">↗</span>' : workout ? 'View today’s workout <span aria-hidden="true">↗</span>' : 'See your workout plan <span aria-hidden="true">↗</span>';
     $('#daysCount').textContent = m.done; $('#consistencyPercent').textContent = `${m.percent}%`;
     $('#consistencyNote').textContent = m.done ? `${m.sick ? `${m.sick} sick day${m.sick === 1 ? '' : 's'} · ` : ''}keep building on it.` : 'Every day is a fresh start.';
@@ -223,9 +222,9 @@
     const y = val => padT + (high - val) / (high - low) * (height - padT - padB);
     ctx.font = '9px DM Sans, sans-serif'; ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
     for (let i = 0; i < 4; i++) { const val = high - i * (high - low) / 3, yy = y(val); ctx.strokeStyle = '#282a30'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(padL, yy); ctx.lineTo(width - padR, yy); ctx.stroke(); ctx.fillStyle = '#777b83'; ctx.fillText(Number.isInteger(val) ? val : val.toFixed(1), padL - 7, yy); }
-    const gradient = ctx.createLinearGradient(0, 0, width, 0); gradient.addColorStop(0, '#c9a7ff'); gradient.addColorStop(1, '#79d9ee');
+    const gradient = ctx.createLinearGradient(0, 0, width, 0); gradient.addColorStop(0, '#d0d0d0'); gradient.addColorStop(1, '#fff');
     if (records.length > 1) { ctx.beginPath(); records.forEach((r, i) => i ? ctx.lineTo(x(i), y(Number(r.weight))) : ctx.moveTo(x(i), y(Number(r.weight)))); ctx.strokeStyle = gradient; ctx.lineWidth = 2.5; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.stroke(); }
-    records.forEach((r, i) => { ctx.beginPath(); ctx.arc(x(i), y(Number(r.weight)), 3.3, 0, Math.PI * 2); ctx.fillStyle = '#141519'; ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = i === records.length - 1 ? '#8ce0e9' : '#c4acfa'; ctx.stroke(); });
+    records.forEach((r, i) => { ctx.beginPath(); ctx.arc(x(i), y(Number(r.weight)), 3.3, 0, Math.PI * 2); ctx.fillStyle = '#141519'; ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = i === records.length - 1 ? '#fff' : '#c4c4c4'; ctx.stroke(); });
     [0, records.length - 1].filter((v, i, a) => a.indexOf(v) === i).forEach(i => { ctx.fillStyle = '#858991'; ctx.textAlign = i === 0 ? 'left' : 'right'; ctx.textBaseline = 'top'; ctx.fillText(dateFormat(fromKey(records[i].date), { month: 'short', day: 'numeric' }), x(i), height - padB + 11); });
     const change = Number(records.at(-1).weight) - Number(records[0].weight), sign = change > 0 ? '+' : '';
     $('#chartSummary').innerHTML = `<strong>${escapeHtml(records.at(-1).weight)} ${escapeHtml(state.settings.unit)}</strong><br>${records.length} entries · ${sign}${change} ${escapeHtml(state.settings.unit)} overall`;
@@ -297,5 +296,15 @@
   $('#backupFile').addEventListener('change', async ev => { if (ev.target.files[0]) await importBackup(ev.target.files[0]); ev.target.value = ''; });
   $('#routineFile').addEventListener('change', async ev => { if (ev.target.files[0]) await importRoutine(ev.target.files[0]); ev.target.value = ''; });
   window.addEventListener('resize', () => { if ($('#progressPage').classList.contains('active')) renderChart(); });
+  const stopPinchZoom = event => event.preventDefault();
+  ['gesturestart', 'gesturechange', 'gestureend'].forEach(type => document.addEventListener(type, stopPinchZoom, { passive: false }));
+  document.addEventListener('touchmove', event => { if (event.touches?.length > 1) event.preventDefault(); }, { passive: false });
+  let lastPageTap = 0;
+  document.addEventListener('touchend', event => {
+    if (event.target.closest('input,select,textarea')) { lastPageTap = 0; return; }
+    const now = Date.now();
+    if (now - lastPageTap < 350) event.preventDefault();
+    lastPageTap = now;
+  }, { passive: false });
   renderAll();
 })();
