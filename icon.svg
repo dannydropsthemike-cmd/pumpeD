@@ -1,4 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-  <rect width="1024" height="1024" fill="#000"/>
+  <defs>
+    <linearGradient id="facetime-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#262626"/>
+      <stop offset="7%" stop-color="#222222"/>
+      <stop offset="28%" stop-color="#1c1c1c"/>
+      <stop offset="58%" stop-color="#161616"/>
+      <stop offset="82%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#facetime-bg)"/>
   <text x="512" y="620" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="190" font-weight="700" letter-spacing="-5" fill="#fff">pumpeD</text>
 </svg>

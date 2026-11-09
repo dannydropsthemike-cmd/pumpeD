@@ -4,6 +4,8 @@ A minimal workout tracker that runs as a static website. It uses plain HTML, CSS
 
 The app starts with **no workout plan loaded**. Import [`hypertrophy-routine.json`](./hypertrophy-routine.json) to load the five-day gym split, with Tuesday and Thursday set as rest days. [`routine.example.json`](./routine.example.json) is a separate sample format reference.
 
+For iPhone Home Screen installation, deploy the site over HTTPS, open it in Safari, then use **Share → Add to Home Screen**. iOS uses [`apple-touch-icon-v2.png`](./apple-touch-icon-v2.png) for the saved icon; the SVG is for browsers that support SVG favicons. If you already saved an older version, remove that Home Screen shortcut and add it again after publishing the new files because iOS keeps the icon from the time it was installed.
+
 ## Run it
 
 Open `index.html` in a browser, or serve this folder with any static web server. To publish with GitHub Pages, push the repository and choose **Settings → Pages → Deploy from a branch**, then select the branch and the repository root. The app uses relative asset paths, so it also works when GitHub Pages serves it from a project subdirectory.
