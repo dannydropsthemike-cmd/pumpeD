@@ -7,7 +7,7 @@ html,body{max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%;touch-a
 @media(max-width:600px){input,select,textarea{font-size:16px!important}}
 html,body,button,a,input,select,textarea{touch-action:manipulation}
 /* Quiet monochrome finish: keep emphasis in the type and spacing. */
-:root{--lav:#eee;--cyan:#d0d0d0;--green:#e6e6e6;--grad:linear-gradient(110deg,#fff 0%,#fff 100%)}
+:root{--bg:#000;--lav:#eee;--cyan:#d0d0d0;--green:#e6e6e6;--grad:linear-gradient(110deg,#fff 0%,#fff 100%)}
 .brand-mark,.streak-pill .flame,.nav-icon{background:none;color:#fff;-webkit-text-fill-color:#fff;filter:none}
 .today-card{height:174px;background:#111214}
 .today-visual{display:none}
@@ -28,3 +28,5 @@ html,body,button,a,input,select,textarea{touch-action:manipulation}
 .toast.warning{background:#eee;color:#151515}
 .today-card .eyebrow{color:#aaa}
 @media(max-width:600px){.today-card{height:165px}.today-visual{display:none}}
+.app-shell{padding-top:env(safe-area-inset-top)}
+.topbar{background:#000}
